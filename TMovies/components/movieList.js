@@ -3,15 +3,17 @@ import React from 'react'
 import { styles } from '../theme'
 import { useNavigation } from '@react-navigation/native';
 
-var { width, height } = Dimensions.get('window'); {
-    let movieName = "Joker: folie à Deux";
+var { width, height } = Dimensions.get('window'); 
+
+export default function MovieList({ title, data}) {
+    let movieName = "Joker: Folie à Deux";
     const navigation = useNavigation();
     return (
         <View className="mb-9 space-y-4">
             <View className="mx-4 flex-row justify-between items-center">
                 <Text className="text-white text-xl">{title}</Text>
                 <TouchableOpacity>
-                    <Text style={style.text} className="text-lg">Ver todos</Text>
+                    <Text style={styles.text} className="text-lg">Ver todos</Text>
                 </TouchableOpacity>
             </View>
             <ScrollView
@@ -49,11 +51,3 @@ var { width, height } = Dimensions.get('window'); {
     )
 }
 
-
-    export default function MovieList({title, data}) {
-  return (
-    <View>
-      <Text>{title}</Text>
-    </View>
-  )
-}
