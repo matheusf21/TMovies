@@ -5,17 +5,6 @@ import Carousel from 'react-native-reanimated-carousel'
 
 var { width, height } = Dimensions.get('window');
 
-const Moviecard =({item, handleClick}) => {
-    return (
-        <TouchableWithoutFeedback onPress={() => handleClick(item)}>
-          <Image
-            source={require('../assets/images/moviePoster1.jpg')}
-            style={{ width: '100%', height: '100%'}}
-            className='rounded-2xl'
-          />
-        </TouchableWithoutFeedback>
-    )
-}
 
 export default function TrendingMovies({data}) {
     const navigation = useNavigation();
@@ -42,5 +31,17 @@ export default function TrendingMovies({data}) {
 
         />
         </View>
+  )
+}
+
+const Moviecard =({item, handleClick}) => {
+  return (
+      <TouchableWithoutFeedback onPress={() => handleClick(item)}>
+        <Image
+          source={require('../assets/images/moviePoster1.jpg')}
+          style={{ width: '100%', height: '100%'}}
+          className='rounded-2xl'
+        />
+      </TouchableWithoutFeedback>
   )
 }

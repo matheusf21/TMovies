@@ -1,11 +1,11 @@
-import { View, Text, TouchableOpacity, ScrollView, TouchableWithoutFeedback, Image, Dimensions  } from 'react-native'
 import React from 'react'
+import { View, Text, TouchableOpacity, ScrollView, TouchableWithoutFeedback, Image, Dimensions } from 'react-native'
 import { styles } from '../theme'
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native'
 
-var { width, height } = Dimensions.get('window'); 
+var { width, height } = Dimensions.get('window');
 
-export default function MovieList({ title, data}) {
+export default function MovieList({ title, data }) {
     let movieName = "Joker: Folie à Deux";
     const navigation = useNavigation();
     return (
@@ -17,31 +17,29 @@ export default function MovieList({ title, data}) {
                 </TouchableOpacity>
             </View>
             <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{ paddingHorizontal: 15}}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={{ paddingHorizontal: 15 }}
             >
                 {
                     data.map((item, index) => {
                         return (
                             <TouchableWithoutFeedback
-                            key={index}
-                            onPress={() => navigation.navigate('Movie', item)}
+                                key={index}
+                                onPress={() => navigation.navigate('Movie', item)}
                             >
-                            
-                              <View className="space-y-1 mr-4">
-                                <Image
-                                 source={require('../assets/images/moviePoster2.jpg')}
-                                 className="rounded-2-xl"
-                                 style={{ width: width * 0.35, height: height * 0.26}}
-                                />
-                                <Text className="text-neutral-300 ml-1 text-center">
-                                    {
-                                        movieName.lenght > 14 ? movieName.slice(0,14) + '...' : movieName
-                                    }
-                                </Text>
-                              </View>
-
+                                <View className="space-y-1 mr-4">
+                                    <Image
+                                        source={require('../assets/images/moviePoster2.jpg')}
+                                        className="rounded-2-xl"
+                                        style={{ width: width * 0.35, height: height * 0.26 }}
+                                    />
+                                    <Text className="text-neutral-300 ml-1 text-center">
+                                        {
+                                            movieName.length > 14 ? movieName.slice(0,14) + '...' : movieName
+                                        }
+                                    </Text>
+                                </View>
                             </TouchableWithoutFeedback>
                         )
                     })
@@ -50,4 +48,3 @@ export default function MovieList({ title, data}) {
         </View>
     )
 }
-
