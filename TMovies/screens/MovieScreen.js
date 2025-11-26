@@ -6,6 +6,8 @@ import { ChevronLeftIcon } from 'react-native-heroicons/outline';
 import { HeartIcon } from 'react-native-heroicons/solid';
 import { styles, theme } from '../theme';
 import { LinearGradient } from 'expo-linear-gradient';
+import Cast from '../components/cast.js';
+import MovieList from '../components/movieList.js'
 
 var { width, height } = Dimensions.get('window');
 
@@ -74,7 +76,11 @@ export default function MovieScreen() {
                     </Text>
 
                     {/* Elenco */}
-        
+                    <Cast navigation= {navigation} cast= {cast}/>
+
+                    {/*Filmes Similares */}
+                    <MovieList title="FIlmes Similares" data={similarMovies } />
+                </View>
             </View>
         </ScrollView>
     )
